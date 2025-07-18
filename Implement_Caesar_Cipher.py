@@ -1,19 +1,18 @@
 def caesar_cipher(text, shift, mode='encrypt'):
     result = ""
     
-    # Adjust shift for decryption
     if mode == 'decrypt':
         shift = -shift
 
     for char in text:
-        # Encrypt/Decrypt uppercase letters
+      
         if char.isupper():
             result += chr((ord(char) + shift - 65) % 26 + 65)
-        # Encrypt/Decrypt lowercase letters
+      
         elif char.islower():
             result += chr((ord(char) + shift - 97) % 26 + 97)
         else:
-            result += char  # Non-alphabetic characters are unchanged
+            result += char  
 
     return result
 
